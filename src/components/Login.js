@@ -8,8 +8,6 @@ const Login = (props) => {
     email: "",
     pass: "",
   });
-  // const [errorMsg, setErrorMsg] = useState("");
-  // const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
   const handleSubmission = () => {
     if (!values.email || !values.pass) {
