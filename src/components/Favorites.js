@@ -28,11 +28,10 @@ const Favorites = () => {
 
     const unsubscribe = onValue(newsRef, onValueChange);
     return () => {
-      // Unsubscribe when the component is unmounted
       unsubscribe();
     };
     // eslint-disable-next-line
-  }, []); // Empty dependency array means the effect runs once on mount
+  }, []);
   return (
     <div>
       <h1>News List</h1>
@@ -49,8 +48,6 @@ const Favorites = () => {
                 </p>
                 
               )}
-              {/* <img src={news.ImageUrl} alt="News" /> */}
-              {/* <img src={news.ImageUrl===null?"https://img.freepik.com/premium-photo/top-view-abstract-paper-texture-background_225709-2718.jpg?w=2000":news.ImageUrl} alt="..."/> */}
               <p>{news.author}</p>
               <p>{news.date}</p>
               <p>{news.source}</p>
