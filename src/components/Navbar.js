@@ -1,8 +1,20 @@
 import React from 'react'
-import {Link} from "react-router-dom"
-
-// FUNCTION BASED COMPONENT
+import { getAuth,signOut} from "firebase/auth";
+import {Link,useLocation,useNavigate} from "react-router-dom"
 const Navbar = (props)=>{
+
+  const auth = getAuth();
+  const user = auth.currentUser;
+  let location = useLocation();
+    let history = useNavigate();
+      const handleLogout =()=>{
+        signOut(auth).then(()=>{
+          history("/");
+        }
+        )
+      }
+      const Login = location.pathname ==='/login';
+      const Signup = location.pathname ==='/signup';
     return (
       <div>
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
@@ -41,6 +53,11 @@ const Navbar = (props)=>{
               
             </div>
           </div>
+          {!user?<form className='d-flex'>
+          {!Login && <Link className="btn btn-primary mx-2" to="/login" role='button'>Login</Link>}
+          {!Signup && <Link className="btn btn-primary mx-2" to="/signup" role='button'>SignUp</Link>}
+          </form>:<><h6 style={{color: "white",marginTop:"17px"}}  >{user.displayName}</h6>
+          <button onClick={handleLogout} className="btn btn-primary mx-2"> Logout </button></>}
 </nav>
       </div>
     )
