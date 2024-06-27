@@ -52,13 +52,14 @@ const App = ()=> {
         <Routes>
             <Route path="/favorites" element={<Favorites/>}></Route>
         </Routes>
-        {/* <News pageSize={6} country="in" category="sports"/> */}
         </Router>
           
+        {/* <News pageSize={6} country="in" category="sports"/> */}
       </div>
     )
   }
  export default App;
+ 
 // CLASS BASED COMPONENT
 // import './App.css';
 // import React, { Component } from 'react'
