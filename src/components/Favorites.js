@@ -48,14 +48,11 @@ const Favorites = () => {
                 ) : (
                   <p>
                 </p>
-                )}
-
-                <p>{news.author}</p>
-                <p>{news.date}</p>
-                <p>{news.source}</p>
-              <Link to={`${news.newsUrl}`} target='_blank'>
-                <button className="btn btn-primary" style={{fontSize:"10px"}}>Read More</button> 
-              </Link>
+                
+              )}
+              <p>{news.author}</p>
+              <p>{news.date}</p>
+              <p>{news.source}</p>
             </li>
           ))}
         </ul>
