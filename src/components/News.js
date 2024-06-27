@@ -3,8 +3,6 @@ import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Link } from 'react-router-dom';
-import { getAuth} from "firebase/auth";
 
 const News = (props)=>{
     const [articles, setArticles] = useState([])
@@ -29,12 +27,9 @@ const News = (props)=>{
         setTotalResults(parsedData.totalResults)
         setLoading(false);
       };
-      const auth = getAuth();
-      const user = auth.currentUser;
         return (
             <>
                 <h1 className="text-center" style={{ margin: '55px 0px' }}>NewsEveryday - Top {(props.category)} Headlines</h1>
-                {user && <Link className='nav-link' style={{display:"flex",justifyContent:"flex-end",marginRight:"1%"}} to='/favorites'>Saved News<i style={{marginTop:"0.3%"}} className="fa-solid fa-star" ></i></Link>}
                 <InfiniteScroll
                     dataLength={articles.length}
                     next={fetchMoreData}

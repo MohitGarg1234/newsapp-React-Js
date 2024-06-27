@@ -5,9 +5,6 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import LoadingBar from "react-top-loading-bar";
-import Login from './components/Login'
-import SignUp from './components/SignUp'
-import Favorites from './components/Favorites';
 const App = ()=> {
   
   // apiKey=process.env.REACT_APP_NEWS_API
@@ -42,15 +39,6 @@ const App = ()=> {
         </Routes>
         <Routes>
           <Route  path='/Science' element={<News setProgress={ setProgress} apiKey={ apiKey} key="Science" pageSize={6} country="in" category="Science"/>}></Route>
-        </Routes>
-        <Routes>
-            <Route path="/login" element={<Login/>}></Route>
-        </Routes>
-        <Routes>
-            <Route path="/signup" element={<SignUp/>}></Route>
-        </Routes>
-        <Routes>
-            <Route path="/favorites" element={<Favorites/>}></Route>
         </Routes>
         </Router>
           
