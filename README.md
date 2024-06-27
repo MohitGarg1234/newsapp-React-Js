@@ -1,4 +1,4 @@
-# NewsEveryday : A cool web Application which enables users to see latest news anytime.
+# NewsEveryday : A web Application which allows users to see latest news anytime.
 
 ## Tech Stack
 ```
